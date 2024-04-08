@@ -3,4 +3,7 @@ project(projectTSP_Garuxer_Setsuma)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(projectTSP_Garuxer_Setsuma main.cpp)
+add_executable(projectTSP_Garuxer_Setsuma main.cpp
+        src/InstanceTSP.h
+        src/InstanceTSP.cpp
+)
