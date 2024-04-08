@@ -1,0 +1,11 @@
+10
+paris 2.34445 48.86
+marseille 5.37639 43.2967
+lyon 4.84139 45.7589
+toulouse 1.43333 43.6
+nice 7.25 43.7
+nantes -1.55 47.2167
+strasbourg 7.75 48.5833
+montpellier 3.88333 43.6
+bordeaux -0.566667 44.8333
+lille 3.06667 50.6333
