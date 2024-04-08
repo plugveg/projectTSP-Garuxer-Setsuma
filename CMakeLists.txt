@@ -8,4 +8,6 @@ add_executable(projectTSP_Garuxer_Setsuma main.cpp
         src/InstanceTSP.cpp
         src/Solution.cpp
         src/Solution.h
+        src/EvalTSP.cpp
+        src/EvalTSP.h
 )
