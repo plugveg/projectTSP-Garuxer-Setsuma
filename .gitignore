@@ -4,6 +4,9 @@
 # Idea folder
 .idea/
 
+#cmake-build folder
+cmake-build-debug
+
 # Compiled Object files
 *.slo
 *.lo
