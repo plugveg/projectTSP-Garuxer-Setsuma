@@ -16,7 +16,7 @@ public:
     [[nodiscard]] std::vector<int> getSolution() const;
 
     void shuffle();
-    void echange(int a, int b);
+    void swap(int i, int j);
 protected:
     std::vector<int> villes;
 };

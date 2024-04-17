@@ -9,6 +9,8 @@ public:
 
     float operator()(Solution &sol);
 
+    [[nodiscard]] InstanceTSP getInstanceTsp() const;
+
     static float distance(const Ville& a, const Ville& b);
     static float toRadian(float val);
 

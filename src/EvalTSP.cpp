@@ -25,3 +25,7 @@ float EvalTSP::operator()(Solution &sol) {
     d += distance(instanceTsp[sol[-1]], instanceTsp[sol[0]]);
     return d;
 }
+
+InstanceTSP EvalTSP::getInstanceTsp() const {
+    return this->instanceTsp;
+}
