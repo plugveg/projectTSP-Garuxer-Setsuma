@@ -12,5 +12,8 @@ int main() {
     std::cout << solution << std::endl;
 
     std::cout << EvalTSP::distance(instanceTsp.getVilles()[0], instanceTsp.getVilles()[1]) << std::endl;
+
+    EvalTSP evalTsp(instanceTsp);
+    std::cout << evalTsp(solution) << std::endl;
     return 0;
 }

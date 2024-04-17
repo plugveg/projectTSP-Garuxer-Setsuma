@@ -1,10 +1,13 @@
 #pragma once
 
 #include "InstanceTSP.h"
+#include "Solution.h"
 
 class EvalTSP {
 public:
     EvalTSP(InstanceTSP &_instanceTsp);
+
+    float operator()(Solution &sol);
 
     static float distance(const Ville& a, const Ville& b);
     static float toRadian(float val);

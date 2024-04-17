@@ -16,6 +16,8 @@ public:
     void afficherInstance();
 
     std::vector<Ville> getVilles();
+    Ville operator[](int i);
+
 protected:
     std::vector<Ville> villes;
 };

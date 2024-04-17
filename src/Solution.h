@@ -8,6 +8,11 @@
 class Solution {
 public:
     Solution(InstanceTSP i);
+
+    int operator[](int i) const;
+
+    int size() const;
+
     [[nodiscard]] std::vector<int> getSolution() const;
 protected:
     std::vector<int> villes;

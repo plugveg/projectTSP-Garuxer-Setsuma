@@ -16,3 +16,12 @@ float EvalTSP::distance(const Ville &a, const Ville &b) {
 float EvalTSP::toRadian(float val) {
     return val * pi / 180;
 }
+
+float EvalTSP::operator()(Solution &sol) {
+    float d = 0.0;
+    for (int i = 0 ; i < sol.size() - 1; i++) {
+        d += distance(instanceTsp[sol[i]], instanceTsp[sol[i + 1]]);
+    }
+    d += distance(instanceTsp[sol[-1]], instanceTsp[sol[0]]);
+    return d;
+}

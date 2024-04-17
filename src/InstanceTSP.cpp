@@ -30,3 +30,8 @@ void InstanceTSP::afficherInstance() {
 std::vector<Ville> InstanceTSP::getVilles() {
     return villes;
 }
+
+Ville InstanceTSP::operator[](int i) {
+    return this->villes[i];
+}
+
