@@ -10,4 +10,7 @@ add_executable(projectTSP_Garuxer_Setsuma main.cpp
         src/Solution.h
         src/EvalTSP.cpp
         src/EvalTSP.h
+        src/Solver.h
+        src/Random.cpp
+        src/Random.h
 )
