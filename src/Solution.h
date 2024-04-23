@@ -17,6 +17,7 @@ public:
 
     void shuffle();
     void swap(int i, int j);
+    void reinsertion(int i, int j);
 protected:
     std::vector<int> villes;
 };

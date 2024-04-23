@@ -1,6 +1,6 @@
-#include <random>
 #include <algorithm>
 #include "Solution.h"
+#include "RandomGenerator.h"
 
 Solution::Solution(InstanceTSP i) {
     villes.resize(i.getVilles().size());
@@ -25,14 +25,15 @@ int Solution::size() const {
 }
 
 void Solution::shuffle() {
-    std::random_device rd;
-    std::mt19937 g(rd());
-    g.seed(time(NULL));
-    std::shuffle(this->villes.begin(), this->villes.end(), g);
+    RandomGenerator::getInstance().shuffle(this->villes);
 }
 
 void Solution::swap(int i, int j) {
     std::swap(this->villes[i], this->villes[j]);
+}
+
+void Solution::reinsertion(int i, int j) {
+
 }
 
 std::ostream& operator<<(std::ostream &os, const Solution &sol) {

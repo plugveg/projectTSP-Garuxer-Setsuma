@@ -15,4 +15,14 @@ add_executable(projectTSP_Garuxer_Setsuma main.cpp
         src/Random.h
         src/Greedy.cpp
         src/Greedy.h
+        src/RandomGenerator.cpp
+        src/RandomGenerator.h
+        src/Neighbor.cpp
+        src/Neighbor.h
+        src/Swap.cpp
+        src/Swap.h
+        src/Reinsertion.cpp
+        src/Reinsertion.h
+        src/TwoOpt.cpp
+        src/TwoOpt.h
 )

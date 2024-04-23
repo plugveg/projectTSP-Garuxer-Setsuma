@@ -8,20 +8,20 @@
 int main() {
 
     InstanceTSP instanceTsp("instances/france_10.tsp");
-    //instanceTsp.afficherInstance(); //Affiche les villes
-    //std::cout << "Distance entre les deux 1ʳᵉˢ villes : " << EvalTSP::distance(instanceTsp.getVilles()[0], instanceTsp.getVilles()[1]) << std::endl;
+    // instanceTsp.afficherInstance(); //Affiche les villes
+    // std::cout << "Distance entre les deux 1ʳᵉˢ villes : " << EvalTSP::distance(instanceTsp.getVilles()[0], instanceTsp.getVilles()[1]) << std::endl;
 
-    //Test Solution in order
+    // Test Solution in order
     Solution solution(instanceTsp);
     std::cout << solution << "Solution dans l'ordre" << std::endl;
     EvalTSP evalTsp(instanceTsp);
     std::cout << "Resultat dans l'ordre : " << evalTsp(solution) << std::endl;
 
-    //Test Swap
+    // Test Swap
     solution.swap(2, 7);
     std::cout << solution << "Solution swap" << std::endl;
 
-    //Test Shuffle
+    // Test Shuffle
     Random random;
     random(solution, evalTsp);
     std::cout << solution << "Solution random" << std::endl;

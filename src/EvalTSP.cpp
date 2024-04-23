@@ -2,9 +2,7 @@
 #include "InstanceTSP.h"
 #include <cmath>
 
-EvalTSP::EvalTSP(InstanceTSP &_instanceTsp) :
-instanceTsp(_instanceTsp) {
-
+EvalTSP::EvalTSP(InstanceTSP &_instanceTsp) : instanceTsp(_instanceTsp) {
 }
 
 float EvalTSP::distance(const Ville &a, const Ville &b) {
