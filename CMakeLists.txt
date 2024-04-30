@@ -25,4 +25,5 @@ add_executable(projectTSP_Garuxer_Setsuma main.cpp
         src/Reinsertion.h
         src/TwoOpt.cpp
         src/TwoOpt.h
+        src/RandomGenerator.cpp
 )

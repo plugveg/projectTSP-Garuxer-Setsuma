@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Swap.h"
 
 void Swap::changeByIndex(Solution s, int index) {
