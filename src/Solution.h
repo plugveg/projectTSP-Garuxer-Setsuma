@@ -18,9 +18,9 @@ public:
     void shuffle();
     void swap(int i, int j);
     void reinsertion(int i, int j);
+    void twoOpt(int i, int j);
 protected:
     std::vector<int> villes;
 };
 
 std::ostream& operator<<(std::ostream &os, const Solution &sol);
-

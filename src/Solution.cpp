@@ -36,6 +36,10 @@ void Solution::reinsertion(int i, int j) {
 
 }
 
+void Solution::twoOpt(int i, int j) {
+
+}
+
 std::ostream& operator<<(std::ostream &os, const Solution &sol) {
     for (auto v : sol.getSolution()) {
         os << v << " ";
