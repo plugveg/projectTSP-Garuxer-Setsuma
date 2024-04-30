@@ -8,6 +8,6 @@ class Neighbor : public Solver {
 public:
     void operator()(Solution &_sol, EvalTSP &_eval) override;
     virtual void changeByIndex(Solution s, int index) = 0;
-    int getNbNeighbor();
-    int getNeighborIndex(Solution s, int index);
+    virtual int getNbNeighbor(Solution s) = 0;
+    virtual std::pair<int, int> getNeighborIndex(Solution s, int index) = 0;
 };
