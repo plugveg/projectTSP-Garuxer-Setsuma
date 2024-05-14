@@ -1,9 +1,9 @@
 #include <cmath>
 #include "TwoOpt.h"
 
-void TwoOpt::changeByIndex(Solution s, int index) {
-    std::pair<int, int> pair = this->getNeighborIndex(s, index);
-    return s.twoOpt(pair.first, pair.second);
+void TwoOpt::changeByIndex(Solution &_sol, int index) {
+    Neighbor::changeByIndex(_sol, index);
+    _sol.twoOpt(pair.first, pair.second);
 }
 
 int TwoOpt::getNbNeighbor(Solution s) {

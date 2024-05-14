@@ -1,8 +1,8 @@
 #include "Reinsertion.h"
 
-void Reinsertion::changeByIndex(Solution s, int index) {
-    std::pair<int, int> pair = this->getNeighborIndex(s, index);
-    return s.reinsertion(pair.first, pair.second);
+void Reinsertion::changeByIndex(Solution &_sol, int index) {
+    Neighbor::changeByIndex(_sol, index);
+    _sol.reinsertion(this->pair.first, this->pair.second);
 }
 
 int Reinsertion::getNbNeighbor(Solution s) {

@@ -26,4 +26,6 @@ add_executable(projectTSP_Garuxer_Setsuma main.cpp
         src/TwoOpt.cpp
         src/TwoOpt.h
         src/RandomGenerator.cpp
+        src/LocalSearch.cpp
+        src/LocalSearch.h
 )

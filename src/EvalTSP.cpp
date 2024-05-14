@@ -15,7 +15,7 @@ float EvalTSP::toRadian(float val) {
     return val * pi / 180;
 }
 
-float EvalTSP::operator()(Solution &sol) {
+float EvalTSP::operator()(Solution &sol) { // Permet de calculer la distance totale du chemin
     float d = 0.0;
     for (int i = 0 ; i < sol.size() - 1; i++) {
         d += distance(instanceTsp[sol[i]], instanceTsp[sol[i + 1]]);

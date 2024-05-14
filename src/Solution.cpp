@@ -33,11 +33,16 @@ void Solution::swap(int i, int j) {
 }
 
 void Solution::reinsertion(int i, int j) {
-
+    int v = this->villes[i];
+    this->villes.erase(this->villes.begin() + i);
+    this->villes.insert(this->villes.begin() + j, v);
 }
 
 void Solution::twoOpt(int i, int j) {
-
+    if (i > j) {
+        std::swap(i, j);
+    }
+    std::reverse(this->villes.begin() + i, this->villes.begin() + j + 1);
 }
 
 std::ostream& operator<<(std::ostream &os, const Solution &sol) {

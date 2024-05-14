@@ -1,9 +1,9 @@
 #include <cmath>
 #include "Swap.h"
 
-void Swap::changeByIndex(Solution s, int index) {
-    std::pair<int, int> pair = this->getNeighborIndex(s, index);
-    return s.swap(pair.first, pair.second);
+void Swap::changeByIndex(Solution &_sol, int index) {
+    Neighbor::changeByIndex(_sol, index);
+    _sol.swap(pair.first, pair.second);
 }
 
 int Swap::getNbNeighbor(Solution s) {
