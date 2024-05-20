@@ -1,30 +1,8 @@
 #include <limits>
 #include "LocalSearch.h"
+#include "RandomGenerator.h"
 
-LocalSearch::LocalSearch(Neighbor &_neighbor) : neighbor(_neighbor) {
-}
-
-void LocalSearch::setNeighbor(Neighbor &_neighbor) {
-    this->neighbor = _neighbor;
-}
-
-Solution LocalSearch::bestImprover(Solution &_sol, EvalTSP &_eval) {
-    Solution bestSolution = _sol;
-    Solution neighborSolution = _sol;
-    float bestDistance = _eval(_sol);
-    int nbNeighbors = this->neighbor.getNbNeighbor(_sol);
-
-    for (int i = 0; i < nbNeighbors; i++) {
-        this->neighbor.changeByIndex(neighborSolution, i);
-        float neighborDistance = _eval(neighborSolution);
-
-        if (neighborDistance < bestDistance) {
-            bestSolution = neighborSolution;
-            bestDistance = neighborDistance;
-        }
-    }
-
-    return bestSolution;
+LocalSearch::LocalSearch(Neighbor &_neighbor) : Search(_neighbor) {
 }
 
 Solution LocalSearch::descentAlgorithm(Solution &_sol, EvalTSP &_eval) {
@@ -43,20 +21,40 @@ Solution LocalSearch::descentAlgorithm(Solution &_sol, EvalTSP &_eval) {
     return bestSolution;
 }
 
-Solution LocalSearch::firstImprover(Solution &_sol, EvalTSP &_eval) {
+Solution LocalSearch::neighborVariable(Solution &_sol, EvalTSP &_eval, std::vector<Neighbor> neighbors) {
     Solution bestSolution = _sol;
-    Solution neighborSolution = _sol;
     float bestDistance = _eval(_sol);
-    int nbNeighbors = this->neighbor.getNbNeighbor(_sol);
 
-    for (int i = 0; i < nbNeighbors; i++) {
-        this->neighbor.changeByIndex(neighborSolution, i);
-        float neighborDistance = _eval(neighborSolution);
+    for (auto neighbor : neighbors) {
+        Neighbor solution = this->descentAlgorithm(_sol, neighbor);
+        float distance = _eval(solution);
 
-        if (neighborDistance < bestDistance) {
-            return bestSolution;
+        if (distance < bestDistance) {
+            bestSolution = solution;
+            bestDistance = distance;
         }
     }
 
     return bestSolution;
+}
+
+Solution LocalSearch::iterated(Solution &_sol, EvalTSP &_eval) {
+    int i = 0;
+
+    while (i < 100) {
+        Solution solution = this->descentAlgorithm(_sol, _eval);
+        _sol = this->disturb(solution, 5);
+        i++;
+    }
+
+    return _sol;
+}
+
+Solution LocalSearch::disturb(Solution &_sol, int strength) {
+    for (int i = 0; i < strength; ++i) {
+        int index = RandomGenerator::getInstance().getRandomNumber(0, this->neighbor.getNbNeighbor(_sol));
+        this->neighbor.changeByIndex(_sol, index);
+    }
+
+    return _sol;
 }

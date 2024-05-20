@@ -1,6 +1,5 @@
 #include "Greedy.h"
 
-
 void Greedy::operator()(Solution &_sol, EvalTSP &_eval) {
     for (int i = 0; i < _sol.size() - 1; i++) {
         float min = RAND_MAX;
